@@ -1,0 +1,32 @@
+package com.example.unitconvertion;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class AreaConverterUtilTest {
+
+    @Test
+    public void testSquareMeterToSquareKilometer() {
+        double result = AreaConverterUtil.convertArea(1_000_000, "Square Meter", "Square Kilometer");
+        assertEquals(1.0, result, 0.01);
+    }
+
+    @Test
+    public void testSquareKilometerToSquareFoot() {
+        double result = AreaConverterUtil.convertArea(1, "Square Kilometer", "Square Foot");
+        assertEquals(10_763_910.42, result, 0.1);
+    }
+
+    @Test
+    public void testSquareFootToSquareMeter() {
+        double result = AreaConverterUtil.convertArea(10_763.91, "Square Foot", "Square Meter");
+        assertEquals(1_000, result, 0.1);
+    }
+
+    @Test
+    public void testSameUnit() {
+        double result = AreaConverterUtil.convertArea(500, "Square Meter", "Square Meter");
+        assertEquals(500, result, 0.01);
+    }
+}
