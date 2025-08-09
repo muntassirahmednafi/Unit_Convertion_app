@@ -1,0 +1,38 @@
+package com.example.unitconvertion;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class VolumeConverterUtilTest {
+
+    @Test
+    public void testLiterToMilliliter() {
+        double result = VolumeConverterUtil.convertVolume(1, "Liter", "Milliliter");
+        assertEquals(1000, result, 0.01);
+    }
+
+    @Test
+    public void testMilliliterToLiter() {
+        double result = VolumeConverterUtil.convertVolume(1500, "Milliliter", "Liter");
+        assertEquals(1.5, result, 0.01);
+    }
+
+    @Test
+    public void testCubicMeterToLiter() {
+        double result = VolumeConverterUtil.convertVolume(2, "Cubic Meter", "Liter");
+        assertEquals(2000, result, 0.01);
+    }
+
+    @Test
+    public void testLiterToCubicMeter() {
+        double result = VolumeConverterUtil.convertVolume(500, "Liter", "Cubic Meter");
+        assertEquals(0.5, result, 0.01);
+    }
+
+    @Test
+    public void testSameUnit() {
+        double result = VolumeConverterUtil.convertVolume(10, "Liter", "Liter");
+        assertEquals(10, result, 0.01);
+    }
+}
