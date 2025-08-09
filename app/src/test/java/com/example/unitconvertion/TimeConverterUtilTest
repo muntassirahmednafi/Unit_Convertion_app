@@ -1,0 +1,33 @@
+package com.example.unitconvertion;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class TimeConverterUtilTest {
+
+    @Test
+    public void testSecondsToMinutes() {
+        assertEquals(2, TimeConverterUtil.convertTime(120, "Seconds", "Minutes"), 0.001);
+    }
+
+    @Test
+    public void testHoursToSeconds() {
+        assertEquals(7200, TimeConverterUtil.convertTime(2, "Hours", "Seconds"), 0.001);
+    }
+
+    @Test
+    public void testDaysToHours() {
+        assertEquals(48, TimeConverterUtil.convertTime(2, "Days", "Hours"), 0.001);
+    }
+
+    @Test
+    public void testMinutesToDays() {
+        assertEquals(0.5, TimeConverterUtil.convertTime(720, "Minutes", "Days"), 0.001);
+    }
+
+    @Test
+    public void testSameUnit() {
+        assertEquals(30, TimeConverterUtil.convertTime(30, "Minutes", "Minutes"), 0.001);
+    }
+}
